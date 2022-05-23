@@ -1,7 +1,9 @@
+import Navbar from "./pages/Shared/Navbar";
+
 function App() {
   return (
     <div>
-        <h2>Clean App</h2>
+        <Navbar></Navbar>
     </div>
   );
 }
