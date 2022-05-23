@@ -1,0 +1,19 @@
+.slick-arrow{
+    color:black
+}
+.slick-prev{
+    z-index: 20;
+    left: -6% !important;
+}
+.slick-prev::before{
+    color: black;
+    font-size: 30px;
+}
+.slick-next{
+    z-index: 20;
+    right: -6% !important;
+}
+.slick-next::before{
+    color: black;
+    font-size: 30px;
+}

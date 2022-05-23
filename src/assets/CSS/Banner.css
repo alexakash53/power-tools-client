@@ -1,0 +1,32 @@
+.slider-bg{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    background-position:center center;
+}
+.slide-1{background-image: url('https://i.ibb.co/ChwcKNW/slider1.png');}
+.slide-2{background-image: url('https://i.ibb.co/42Lbw3t/slider2.png');}
+.slide-3{background-image: url('https://i.ibb.co/JdbLtF0/slider3.png');}
+.slider-box{
+    position: relative;
+}
+.hero-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    right: 0;
+    text-overflow: inherit;
+}
+.slick-dots {
+    bottom: 12%;
+}
+.slick-dots li.slick-active button::before{
+    color: #FBC22B;
+    font-size: 18px;
+    opacity: 1;
+}
+.slick-dots li button::before{
+    opacity: .8;
+    font-size: 14px;
+}
