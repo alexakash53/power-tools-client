@@ -1,0 +1,19 @@
+.counter-icon{
+    display: inline-block;
+    border: 1px solid #333;
+    border-radius: 50%;
+    font-size: 75px;
+    background: #333;
+    color: #FBC22B;
+    padding: 16px;
+}
+.counter h2{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.counter span{
+    display: block;
+    font-size: 50px;
+    font-weight: 700;
+}
+.counter{}

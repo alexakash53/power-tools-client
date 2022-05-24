@@ -2,7 +2,7 @@ import React from 'react';
 
 const Info = () => {
     return (
-        <div className='grid grid-cols-2 px-20 gap-5'>
+        <div className='grid lg:grid-cols-2 sm:grid-cols-1 px-20 gap-5'>
             <div class="card card-compact bg- shadow-xl p-3 bg-neutral">
                 <div class="p-5 lg:flex lg:flex-row lg:justify-between lg:items-center block">
                     <div className='text-white'>
