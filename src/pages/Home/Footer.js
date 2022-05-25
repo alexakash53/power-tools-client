@@ -4,6 +4,7 @@ import { FaFacebookF, FaInstagram, FaLinkedin, FaYoutube, FaTwitter } from "reac
 const Footer = () => {
     return (
         <div>
+        <div className='py-5 bg-primary text-black text-center text-3xl font-extrabold'>GUARANTEED TOUGH.</div>
             <footer class="footer flex justify-between p-10 bg-base-200 text-base-content">
                 <div>
                     <span class="footer-title">Services</span> 

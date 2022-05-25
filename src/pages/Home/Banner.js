@@ -57,7 +57,7 @@ const Hero = () => {
                         <h2 className='text-3xl lg:text-6xl font-medium capitalize mb-5 text-white'>Best power tools and sales available</h2>
                         <p className='mb-5 text-white'>Our power tools are made to live on the jobsite. That’s where they’re tested. And if there’s a problem, it’s where we solve it. The result is tools that we can stand behind.</p>
                         <Link to='/explore-cars'>
-                            <button className='bg-accent rounded-full focus:ring-2 ring-offset-2 duration-300 ring-red-500 mr-3 text-white md:font-medium px-8 py-2 border-2 border-transparent hover:border-red-500 hover:bg-white hover:text-red-500 md:text-lg mb-1'>Explore Cars</button>
+                            <button className='bg-accent rounded-full focus:ring-2 ring-offset-2 duration-300 ring-red-500 mr-3 text-white md:font-medium px-8 py-2 border-2 border-transparent hover:border-red-500 hover:bg-white hover:text-red-500 md:text-lg mb-1'>Explore Tools</button>
                         </Link>
                         <Link to='/about'>
                             <button className='bg-primary rounded-full focus:ring-2 ring-offset-2 duration-300 ring-red-500 mr-3 text-black md:font-medium px-8 py-2 border-2 border-transparent hover:border-red-500 hover:bg-white hover:text-red-500 md:text-lg'>About Us</button>
@@ -69,7 +69,7 @@ const Hero = () => {
                         <h2 className='text-4xl lg:text-6xl font-medium capitalize mb-5 text-white'>New Collections and reparing</h2>
                         <p className='mb-5 text-white'>Our power tools are made to live on the jobsite. That’s where they’re tested. And if there’s a problem, it’s where we solve it. The result is tools that we can stand behind.</p>
                         <Link to='/explore-cars'>
-                            <button className='bg-primary rounded-full focus:ring-2 ring-offset-2 duration-300 ring-red-500 mr-3 text-black md:font-medium px-8 py-2 border-2 border-transparent hover:border-red-500 hover:bg-white hover:text-red-500 md:text-lg'>Explore Cars</button>
+                            <button className='bg-primary rounded-full focus:ring-2 ring-offset-2 duration-300 ring-red-500 mr-3 text-black md:font-medium px-8 py-2 border-2 border-transparent hover:border-secondary hover:bg-white hover:text-black md:text-lg'>Explore Tools</button>
                         </Link>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ const Hero = () => {
                         <h2 className='text-4xl lg:text-6xl font-medium capitalize mb-5 text-white'>Want to Look Dewalt Tools</h2>
                         <p className='mb-5 text-white'>Our power tools are made to live on the jobsite. That’s where they’re tested. And if there’s a problem, it’s where we solve it. The result is tools that we can stand behind.</p>
                         <Link to='/explore-cars'>
-                            <button className='bg-primary rounded-full focus:ring-2 ring-offset-2 duration-300 ring-red-500 mr-3 text-black md:font-medium px-8 py-2 border-2 border-transparent hover:border-red-500 hover:bg-white hover:text-red-500 md:text-lg'>Explore Cars</button>
+                            <button className='bg-primary rounded-full focus:ring-2 ring-offset-2 duration-300 ring-red-500 mr-3 text-black md:font-medium px-8 py-2 border-2 border-transparent hover:border-secondary hover:bg-white hover:text-black md:text-lg'>Explore Tools</button>
                         </Link>
                     </div>
                 </div>

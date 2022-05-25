@@ -8,7 +8,7 @@
 }
 .text-feature h2{
     font-weight: 700;
-    color: #A8171A;
+    color: #FE9013;
     font-size: 55px;
     text-transform: uppercase;
 }
@@ -18,7 +18,7 @@
     line-height: 1.5;
 }
 .text-feature span{
-    color: #FE9013;
+    color: #A8171A;
 }
 .btn-black{
     border: 1px solid #FF3142;
