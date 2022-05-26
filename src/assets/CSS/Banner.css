@@ -4,8 +4,8 @@
     height: 90vh;
     background-position:center center;
 }
-.slide-1{background-image: url('https://i.ibb.co/ChwcKNW/slider1.png');}
-.slide-2{background-image: url('https://i.ibb.co/42Lbw3t/slider2.png');}
+.slide-1{background-image: url('https://i.ibb.co/PWWSVkx/New-Project-1.png');}
+.slide-2{background-image: url('https://i.ibb.co/cDcR7jZ/New-Project-2.png');}
 .slide-3{background-image: url('https://i.ibb.co/JdbLtF0/slider3.png');}
 .slider-box{
     position: relative;
@@ -17,6 +17,9 @@
     transform: translate(-50%,-50%);
     right: 0;
     text-overflow: inherit;
+}
+.hero-text h2 {
+    text-shadow: -8px 3px 3px #000;
 }
 .slick-dots {
     bottom: 12%;

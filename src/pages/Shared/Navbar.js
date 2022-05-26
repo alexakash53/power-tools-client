@@ -21,9 +21,9 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">
+                    <Link to={'/'} className="btn btn-ghost normal-case text-xl">
                         <img style={{width:100}} src="https://i.ibb.co/HzpCshd/dewalt.png" alt="Logo" />
-                    </a>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex navbar-end">
                     <ul className="menu menu-horizontal p-0">
