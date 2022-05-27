@@ -12,7 +12,7 @@ const Review = () => {
     const [ratings, setRatings] = useState([])
 
     useEffect(() => {
-        fetch('./FakeData/reviews.json')
+        fetch('http://localhost:5000/rating')
             .then(res => res.json())
             .then(data => setRatings(data))
     }, [])

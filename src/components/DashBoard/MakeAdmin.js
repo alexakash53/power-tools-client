@@ -6,13 +6,14 @@ const MakeAdmin = () => {
     const [success, setSuccess] = useState(false)
 
     const onSubmit = data => {
-        fetch('https://salty-beyond-08378.herokuapp.com/users/admin', {
-            method: 'PUT',
+        data.role = "admin"
+        fetch('http://localhost:5000/users/admin', {
+            method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
         }).then(res => res.json())
             .then(data => {
-                if (data.modifiedCount) {
+                if (data.insertedId) {
                     setSuccess(true)
                     reset()
                 }
@@ -25,7 +26,7 @@ const MakeAdmin = () => {
                 <p className='text-red-500'>admin added succesfully</p>
             </div>}
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input className='border-2 lg:w-1/2 w-full mx-auto block border-secondary pl-5 rounded-full py-3 outline-none' {...register("email", { required: true })} placeholder='Email' /> <br />
+                <input className='border-2 lg:w-1/2 w-full mx-auto block border-secondary pl-5 rounded-full py-3 outline-none' {...register("email", { required: true })} placeholder='Email' type='email' /> <br />
                 {/* errors will return when field validation fails  */}
                 {errors.exampleRequired && <span>This field is required</span>}
 

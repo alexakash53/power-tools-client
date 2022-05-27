@@ -9,7 +9,7 @@ const AddReview = () => {
     const [successRating, setSuccessRating] = useState(false)
 
     const onSubmit = data => {
-        fetch('https://salty-beyond-08378.herokuapp.com/rating', {
+        fetch('http://localhost:5000/rating', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -28,7 +28,7 @@ const AddReview = () => {
             <h2 className='text-4xl mb-5'>Review Our Service</h2>
             {successRating && <p className='text-red-500 mb-3 font-semibold'>Rating Successfully added.</p>}
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input className='border-b-2 w-2/3 border-secondary pl-5 mb-5 rounded-full py-3 outline-none' type='name' {...register("name", { required: true })} placeholder='Your Name' /> <br />
+                <input className='border-b-2 w-2/3 border-secondary pl-5 mb-5 rounded-full py-3 outline-none' type='name' {...register("Name", { required: true })} placeholder='Your Name' /> <br />
                 <input className='border-b-2 w-2/3 border-secondary pl-5 mb-5 rounded-full py-3 outline-none' type='designation' {...register("designation", { required: true })} placeholder='Your Job Title' /> <br />
                 <div>
                     {[...Array(5)].map((star, i) => {
@@ -39,7 +39,7 @@ const AddReview = () => {
                         </label>
                     })}
                 </div>
-                <textarea className='border-2 mt-5 rounded-full w-2/3 border-secondary pl-5 mb-5 py-3 outline-none' {...register("feedback")} /> <br />
+                <textarea className='border-2 mt-5 rounded-full w-2/3 border-secondary pl-5 mb-5 py-3 outline-none' {...register("Review")} /> <br />
                 <input type='url' className='border-b-2 w-2/3 border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("img", { required: true })} placeholder='Your Profile image url' /> <br />
                 <button type='submit' className='btn border-2 border-secondary rounded-full bg-white text-black px-10'>Submit Rating</button>
             </form>

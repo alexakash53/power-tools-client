@@ -3,17 +3,17 @@ import React, { useEffect, useState } from 'react';
 const ManageProducts = () => {
     const [products, setProducts] = useState([])
     const [isDelete, setIsDelete] = useState(null)
-
+    console.log(products)
     useEffect(() => {
-        fetch('https://salty-beyond-08378.herokuapp.com/products')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
-            .then(data => setProducts(data.result))
+            .then(data => setProducts(data))
     }, [isDelete])
     // delete product
     const handleDeleteProduct = (id) => {
         const confirmation = window.confirm('Are you sure product will be delete parmanently?')
         if (confirmation) {
-            fetch(`https://salty-beyond-08378.herokuapp.com/delete/${id}`, {
+            fetch(`http://localhost:5000/delete/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' }
             }).then(res => res.json())

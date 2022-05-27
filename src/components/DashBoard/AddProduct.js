@@ -7,7 +7,7 @@ const AddProduct = () => {
     // const history = useHistory()
 
     const onSubmit = data => {
-        fetch('https://salty-beyond-08378.herokuapp.com/products', {
+        fetch('http://localhost:5000/products', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -30,11 +30,11 @@ const AddProduct = () => {
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("name", { required: true })} placeholder='Tools Title' /> <br />
-                    <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("price", { required: true })} placeholder='Tools Model' type='number' /> <br />
-                    <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("cc", { required: true })} placeholder='Tools Price' type='number' /> <br />
-                    <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("type", { required: true })} placeholder='Tools Type' /> <br />
+                    <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("model", { required: true })} placeholder='Tools Model' type='text' /> <br />
+                    <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("price", { required: true })} placeholder='Tools Price' type='number' /> <br />
+                    <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("quantity", { required: true })} placeholder='Tools Quantity' type='number' /> <br />
                     <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("year", { required: true })} placeholder='Tools released year' type='number' /> <br />
-                    <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("body", { required: true })} placeholder='Tools description' /> <br />
+                    <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("description", { required: true })} placeholder='Tools description' /> <br />
                     <input className='border-b-2 w-full border-secondary pl-5 mb-5 rounded-full py-3 outline-none' {...register("img", { required: true })} placeholder='Tools Image Link' type='url' /> <br />
                     {/* errors will return when field validation fails  */}
                     {errors.exampleRequired && <span>This field is required</span>}

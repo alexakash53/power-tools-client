@@ -42,6 +42,7 @@ function App() {
             <Route path="/dashboard/addReview" element={<RequireAuth><AddReview/></RequireAuth>}></Route>
             <Route path="/dashboard/manageOrders" element={<RequireAuth><ManageOrders/></RequireAuth>}></Route>
             <Route path="/dashboard/manageProducts" element={<RequireAuth><ManageProducts/></RequireAuth>}></Route>
+            <Route path="/dashboard/addProduct" element={<RequireAuth><AddProduct/></RequireAuth>}></Route>
             <Route path="/dashboard/makeAdmin" element={<RequireAuth><MakeAdmin/></RequireAuth>}></Route>
           </Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>

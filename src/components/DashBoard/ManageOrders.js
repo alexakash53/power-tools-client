@@ -4,14 +4,14 @@ const ManageOrders = () => {
     const [allOrders, setAllOrders] = useState([])
 
     useEffect(() => {
-        fetch('https://salty-beyond-08378.herokuapp.com/all-orders')
+        fetch('http://localhost:5000/all-orders')
             .then(res => res.json())
             .then(data => setAllOrders(data))
     }, [])
 
     // handle status
     const handleStatus = (id) => {
-        fetch(`https://salty-beyond-08378.herokuapp.com/updateStatus/${id}`, {
+        fetch(`http://localhost:5000/updateStatus/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' }
         }).then(res => res.json())
@@ -22,7 +22,7 @@ const ManageOrders = () => {
             })
     }
     const handleStatus1 = (id) => {
-        fetch(`https://salty-beyond-08378.herokuapp.com/updateStatus1/${id}`, {
+        fetch(`http://localhost:5000/updateStatus1/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' }
         }).then(res => res.json())
@@ -33,7 +33,7 @@ const ManageOrders = () => {
             })
     }
     return (
-        <div className='container mx-auto py-10'>
+        <div className=' mx-auto py-10'>
             <div className="flex flex-col">
                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
