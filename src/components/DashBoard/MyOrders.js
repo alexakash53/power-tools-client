@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react';
-// import useAuth from '../../../hooks/useAuth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const MyOrders = () => {
     const [products, setProducts] = useState([])
     const [isDelete, setIsDelete] = useState(null)
-    // const { user } = useAuth()
+    const [user]= useAuthState(auth);
 
-    // useEffect(() => {
-    //     fetch(`https://salty-beyond-08378.herokuapp.com/orders?email=${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setProducts(data))
-    // }, [user.email])
+    useEffect(() => {
+        fetch(`http://localhost:5000/orders?email=${user.email}`)
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [user.email])
+    console.log(products)
     // delete order
     const handleDeleteOrder = (id) => {
         const confirmation = window.confirm('Are you sure you want to cancel your order?')
         if (confirmation) {
-            fetch(`https://salty-beyond-08378.herokuapp.com/delete-order/${id}`, {
+            fetch(`http://localhost:5000/delete-order/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' }
             }).then(res => res.json())
@@ -76,7 +78,7 @@ const MyOrders = () => {
                                         <tr key={product._id}>
                                             <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="ml-4">
-                                                    <div className="text-sm font-medium text-gray-900 capitalize">{product.title}</div>
+                                                    <div className="text-sm font-medium text-gray-900 capitalize">{product.name}</div>
                                                 </div>
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">

@@ -14,6 +14,11 @@ import MakeAdmin from "./components/DashBoard/MakeAdmin";
 import ManageProducts from "./components/DashBoard/ManageProducts";
 import AddReview from "./components/DashBoard/AddReview";
 import Productdetails from "./pages/Home/ProductDetails";
+import Payment from "./components/Payment/Payment";
+import DashBoard from "./pages/Dashboard/DashBoard";
+import RequireAuth from "./pages/Login/RequeirAuth";
+import MyProfile from "./components/DashBoard/MyProfile";
+import OrderSuccess from "./components/Payment/OrderSuccess";
 
 function App() {
   return (
@@ -27,11 +32,18 @@ function App() {
           <Route path="/blog" element={<Blog/>}></Route>
           <Route path="/myOrders" element={<MyOrders/>}></Route>
           <Route path="/addProduct" element={<AddProduct/>}></Route>
-          <Route path="/productDetails" element={<Productdetails/>}></Route>
-          <Route path="/addReview" element={<AddReview/>}></Route>
-          <Route path="/manageOrders" element={<ManageOrders/>}></Route>
-          <Route path="/manageProducts" element={<ManageProducts/>}></Route>
-          <Route path="/makeAdmin" element={<MakeAdmin/>}></Route>
+          <Route path="/productDetails/:id" element={<Productdetails/>}></Route>
+          <Route path="/payMent/:id" element={<Payment/>}></Route>
+          <Route path="/orderSuccess" element={<OrderSuccess/>}></Route>
+          <Route path="/dashboard" element={<RequireAuth><DashBoard></DashBoard></RequireAuth>}>
+            <Route path="/dashboard" element={<RequireAuth><DashBoard/></RequireAuth>}></Route>
+            <Route path="/dashboard/myProfile" element={<RequireAuth><MyProfile/></RequireAuth>}></Route>
+            <Route path="/dashboard/myOrders" element={<RequireAuth><MyOrders/></RequireAuth>}></Route>
+            <Route path="/dashboard/addReview" element={<RequireAuth><AddReview/></RequireAuth>}></Route>
+            <Route path="/dashboard/manageOrders" element={<RequireAuth><ManageOrders/></RequireAuth>}></Route>
+            <Route path="/dashboard/manageProducts" element={<RequireAuth><ManageProducts/></RequireAuth>}></Route>
+            <Route path="/dashboard/makeAdmin" element={<RequireAuth><MakeAdmin/></RequireAuth>}></Route>
+          </Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
         <Footer></Footer>

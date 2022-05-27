@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 // import useAuth from '../../hooks/useAuth';
 
@@ -8,28 +8,31 @@ const Productdetails = () => {
     const [product, setProduct] = useState({})
     // const { user } = useAuth()
     const { id } = useParams();
+    const navigate = useNavigate()
+
+    console.log(id)
     // const history = useHistory()
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     useEffect(() => {
-        fetch(`https://salty-beyond-08378.herokuapp.com/products/${id}`)
+        fetch(`http://localhost:5000/product/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id])
 
     // buy now
     const onSubmit = data => {
-        data.title = product.name
+        data.name = product.name
         data.price = product.price
         data.status = 'pending'
-        fetch('https://salty-beyond-08378.herokuapp.com/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
         }).then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    // history.push(`/payment-method/${data.insertedId}`)
+                    navigate(`/payment/${data.insertedId}`)
                     reset()
                 }
             })
@@ -39,11 +42,12 @@ const Productdetails = () => {
             <div className="container mx-auto py-10 px-5 lg:px-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div className="car-details">
-                        <img src='https://www.dewalt.com/NAG/PRODUCT/IMAGES/HIRES/DCE151TD1/DCE151TD1_1.jpg?resize=530x530' alt="" />
+                        <img src={product.img} alt="" />
                         <h3 className='text-4xl capitalize font-semibold my-5'>{product.name}</h3>
-                        <p className='font-semibold text-xl'>Price <span className='text-red-500'>${product.price}</span></p>
-                        <p className='font-semibold'>The car has <span className='text-red-500'>{product.cc}cc</span> power.</p>
-                        <p className='text-lg mt-5'>{product.body}</p>
+                        <p className='font-semibold text-xl'>Model <span className='text-gray-600'>{product.model}</span></p>
+                        <p className='font-semibold text-xl'>Price <span className='text-gray-600'>${product.price}</span></p>
+                        <p className='font-semibold'>Product Details <span className='text-gray-600'>{product.description}</span></p>
+                        <p className='description mt-5'>{product.body}</p>
                     </div>
                     <div className="puchase-info-form">
                         <h2 className='text-3xl capitalize mb-10 text-center mt-10 lg:mt-0'>Fill up the form to buy</h2>
