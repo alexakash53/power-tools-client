@@ -19,6 +19,7 @@ import DashBoard from "./pages/Dashboard/DashBoard";
 import RequireAuth from "./pages/Login/RequeirAuth";
 import MyProfile from "./components/DashBoard/MyProfile";
 import OrderSuccess from "./components/Payment/OrderSuccess";
+import RequireAdmin from "./pages/Login/RequireAdmin";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
           <Route path="/blog" element={<Blog/>}></Route>
           <Route path="/myOrders" element={<MyOrders/>}></Route>
           <Route path="/addProduct" element={<AddProduct/>}></Route>
-          <Route path="/productDetails/:id" element={<Productdetails/>}></Route>
+          <Route path="/productDetails/:id" element={<RequireAuth><Productdetails/></RequireAuth>}></Route>
           <Route path="/payMent/:id" element={<Payment/>}></Route>
           <Route path="/orderSuccess" element={<OrderSuccess/>}></Route>
           <Route path="/dashboard" element={<RequireAuth><DashBoard></DashBoard></RequireAuth>}>

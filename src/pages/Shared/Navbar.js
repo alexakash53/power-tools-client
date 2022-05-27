@@ -17,7 +17,7 @@ const Navbar = () => {
         <li><Link to="/review">Portfolio</Link></li>
         <li><Link to="/blog">Blog</Link></li>
         <li><Link to="/about">About</Link></li> 
-        <li><Link to="/dashboard/myOrders">Dashboard</Link></li> 
+        {user && <li><Link to="/dashboard/myProfile">Dashboard</Link></li> }
          {
                         user?.displayName ? <div className='user-area' style={{display:'inline-block'}}>
                             <img style={{width:'35px',borderRadius:'50%',display:'inline-block'}} src={user.photoURL ? user.photoURL : 'https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg'} alt="" /> 

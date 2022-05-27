@@ -25,6 +25,9 @@ const Productdetails = () => {
         data.name = product.name
         data.price = product.price
         data.status = 'pending'
+        if(data.quantity <15){
+            return alert('Quantity must be 15 or bigger than 15')
+        }
         fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -42,9 +45,10 @@ const Productdetails = () => {
             <div className="container mx-auto py-10 px-5 lg:px-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div className="car-details">
-                        <img src={product.img} alt="" />
+                        <img style={{width:"80%"}} src={product.img} alt="" />
                         <h3 className='text-4xl capitalize font-semibold my-5'>{product.name}</h3>
                         <p className='font-semibold text-xl'>Model <span className='text-gray-600'>{product.model}</span></p>
+                        <p className='font-semibold text-xl'>Quantity <span className='text-gray-600'>{product.quantity}</span></p>
                         <p className='font-semibold text-xl'>Price <span className='text-gray-600'>${product.price}</span></p>
                         <p className='font-semibold'>Product Details <span className='text-gray-600'>{product.description}</span></p>
                         <p className='description mt-5'>{product.body}</p>
@@ -57,6 +61,7 @@ const Productdetails = () => {
                             <input className='border-b-2 w-full border- pl-5 mb-5 rounded-full py-3 outline-none' {...register("address", { required: true })} placeholder='Your Address' /> <br />
                             <input className='border-b-2 w-full border- pl-5 mb-5 rounded-full py-3 outline-none' {...register("city", { required: true })} placeholder='City' /> <br />
                             <input className='border-b-2 w-full border- pl-5 mb-5 rounded-full py-3 outline-none' {...register("phone", { required: true })} type='number' placeholder='Your Phone Number' /> <br />
+                            <input className='border-b-2 w-full border- pl-5 mb-5 rounded-full py-3 outline-none' {...register("quantity", { required: true })} min='15' max={product.quantity} type='number' placeholder={`Enter Min 15 Tools Or max ${product.quantity}`} /> <br />
                             {/* errors will return when field validation fails  */}
                             {errors.name || errors.email || errors.address || errors.city || errors.phone ? <span className='text-red-500 font-semibold  pl-5 mb-3'>Please fill all the input correctly!</span> : ""}
 

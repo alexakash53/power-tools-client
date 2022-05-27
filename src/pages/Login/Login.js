@@ -31,6 +31,9 @@ const Login = () => {
     if (loading || gLoading) {
         return <Loading></Loading>
     }
+    if (user) {
+        navigate(from, { replace: true });
+    }
 
     if(error || gError){
         signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
