@@ -13,7 +13,7 @@ const CheckOut = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://blooming-thicket-10128.herokuapp.com/product/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id])
@@ -23,7 +23,7 @@ const CheckOut = () => {
         data.price = product.price
         data.quantity = localStorage.getItem('quantity')
         data.status = 'pending'
-        fetch('http://localhost:5000/orders', {
+        fetch('https://blooming-thicket-10128.herokuapp.com/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

@@ -7,7 +7,7 @@ const MakeAdmin = () => {
 
     const onSubmit = data => {
         data.role = "admin"
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://blooming-thicket-10128.herokuapp.com/users/admin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

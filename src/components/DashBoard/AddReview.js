@@ -9,7 +9,7 @@ const AddReview = () => {
     const [successRating, setSuccessRating] = useState(false)
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/rating', {
+        fetch('https://blooming-thicket-10128.herokuapp.com/rating', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

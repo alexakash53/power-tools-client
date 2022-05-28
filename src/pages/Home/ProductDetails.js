@@ -15,7 +15,7 @@ const Productdetails = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://blooming-thicket-10128.herokuapp.com/product/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id])
@@ -27,7 +27,7 @@ const Productdetails = () => {
             return alert('Quantity must be 15 or bigger than 15')
         }
         data.quantity=product.quantity-data.quantity
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://blooming-thicket-10128.herokuapp.com/product/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
