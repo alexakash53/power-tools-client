@@ -20,6 +20,9 @@ import RequireAuth from "./pages/Login/RequeirAuth";
 import MyProfile from "./components/DashBoard/MyProfile";
 import OrderSuccess from "./components/Payment/OrderSuccess";
 import RequireAdmin from "./pages/Login/RequireAdmin";
+import Portfolio from "./pages/Home/Portfolio";
+import About from "./pages/Home/About";
+import CheckOut from "./components/Payment/CheckOut";
 
 function App() {
   return (
@@ -30,11 +33,14 @@ function App() {
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/signup" element={<SignUp/>}></Route>
           <Route path="/allProducts" element={<AllProducts/>}></Route>
+          <Route path="/portfolio" element={<Portfolio/>}></Route>
           <Route path="/blog" element={<Blog/>}></Route>
+          <Route path="/about" element={<About/>}></Route>
           <Route path="/myOrders" element={<MyOrders/>}></Route>
           <Route path="/addProduct" element={<AddProduct/>}></Route>
           <Route path="/productDetails/:id" element={<RequireAuth><Productdetails/></RequireAuth>}></Route>
-          <Route path="/payMent/:id" element={<Payment/>}></Route>
+          <Route path="/payMent/:id" element={<RequireAuth><Payment/></RequireAuth>}></Route>
+          <Route path="/checkOut/:id" element={<RequireAuth><CheckOut/></RequireAuth>}></Route>
           <Route path="/orderSuccess" element={<OrderSuccess/>}></Route>
           <Route path="/dashboard" element={<RequireAuth><DashBoard></DashBoard></RequireAuth>}>
             <Route path="/dashboard" element={<RequireAuth><DashBoard/></RequireAuth>}></Route>

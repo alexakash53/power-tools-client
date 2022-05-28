@@ -11,9 +11,12 @@
 .products-info{
     margin: 10px 0;
 }
+.img-info img{
+    margin-bottom: 40px;
+}
 .products-info h2{
     font-weight: 600;
-    color: #1a1a1a;
+    color: #1b1818;
     font-size: 16px;
 }
 .products-info{}
