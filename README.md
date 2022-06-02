@@ -1,4 +1,4 @@
-# Project Name :- Power-Tools - Best tools saling service all over the world.
+# Project Name : Power-Tools - Best tools saling service all over the world.
 
 ### Full Stack Mern Project
 Live Site Link: https://power-tools-92939.web.app/
