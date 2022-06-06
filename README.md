@@ -13,7 +13,7 @@ Server Code Link: https://github.com/programming-hero-web-course1/manufacturer-w
 * Dashboard Control Panel Feature
 * Admin Panel
 * User Panel
-* Tools collection to buy cars
+* Tools collection to buy tools
 * Responsive Ui - mobile friendly.
 
 
